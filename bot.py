@@ -7,7 +7,7 @@ from aiogram.filters import CommandStart
 TOKEN = "8445500914:AAEq9lvI2YGz4iZiR0Ih5bMsnuW9I0omudE"
 
 # Сюда вставь ссылку от LocalTunnel, которую выдаст команда npx localtunnel --port 8000
-WEBAPP_URL = "https://nine-suns-win.loca.lt"
+WEBAPP_URL = "https://krestik-production-5fd9.up.railway.app"
 
 bot = Bot(TOKEN)
 dp = Dispatcher()
