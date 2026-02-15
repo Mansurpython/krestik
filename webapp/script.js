@@ -43,3 +43,25 @@ function resetBoard() {
         cell.style.backgroundColor = '#222';
     });
 }
+
+// Модальное окно для приглашений
+const inviteBtn = document.getElementById('invite');
+const modal = document.getElementById('invite-modal');
+const closeBtn = modal.querySelector('.close');
+
+inviteBtn.onclick = () => modal.style.display = 'block';
+closeBtn.onclick = () => modal.style.display = 'none';
+window.onclick = e => { if(e.target == modal) modal.style.display = 'none'; }
+
+// Кнопки “Пригласить” в списке друзей
+const friendButtons = document.querySelectorAll('.invite-btn');
+friendButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const user = btn.dataset.user;
+        // Генерация ссылки для друга
+        const link = `${WEBAPP_URL}?invite=${user}`;
+        alert(`Скопируйте ссылку и отправьте другу: ${link}`);
+        // Можно добавить copy-to-clipboard:
+        navigator.clipboard.writeText(link);
+    });
+});

@@ -36,6 +36,21 @@
         <button id="invite">Пригласить друга</button>
     </div>
 
+    <!-- Модальное окно для приглашений -->
+<div id="invite-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Пригласить друга</h2>
+        <ul id="friends-list">
+            <!-- Список друзей -->
+            <li>Друг 1 <button class="invite-btn" data-user="friend1">Пригласить</button></li>
+            <li>Друг 2 <button class="invite-btn" data-user="friend2">Пригласить</button></li>
+            <li>Друг 3 <button class="invite-btn" data-user="friend3">Пригласить</button></li>
+        </ul>
+    </div>
+</div>
+
+
     <script src="script.js"></script>
 </body>
 </html>
