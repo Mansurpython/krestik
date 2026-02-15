@@ -1,9 +1,85 @@
-body { background:black; color:white; text-align:center; font-family:Arial; }
-.board { display:grid; grid-template-columns:repeat(3,100px); gap:10px; justify-content:center; margin-top:30px; }
-.cell { width:100px; height:100px; background:#111; font-size:40px; display:flex; justify-content:center; align-items:center; cursor:pointer; transition: transform 0.2s, background 0.3s; }
-.cell:hover { transform: scale(1.1); background: #222; }
-.cell.win { background: gold; animation: glow 1s infinite alternate; }
-@keyframes glow { from { box-shadow: 0 0 10px gold; } to { box-shadow: 0 0 30px gold; } }
-.menu { margin-top:40px; }
-button { background:#111; color:white; border:1px solid #333; padding:10px; margin:5px; cursor:pointer; }
-button:hover { background:#222; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #111111);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px;
+    font-size: 16px;
+    background-color: #111;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    grid-template-rows: repeat(3, 25vw);
+    gap: 2vw;
+}
+
+.cell {
+    background-color: #222;
+    border-radius: 8px; /* закругленные клетки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px;
+    background-color: #111;
+}
+
+.bottom-bar button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 12px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.bottom-bar button:hover {
+    transform: scale(1.05);
+    background-color: #555;
+}
+
+@media (max-width: 400px) {
+    .board {
+        grid-template-columns: repeat(3, 28vw);
+        grid-template-rows: repeat(3, 28vw);
+        gap: 3vw;
+    }
+    .cell {
+        font-size: 7vw;
+    }
+}

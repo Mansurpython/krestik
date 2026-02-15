@@ -1,38 +1,45 @@
-let board = ["","","","","","","","",""];
-let current = "X";
+const cells = document.querySelectorAll('.cell');
+let turn = 'X';
+let board = Array(9).fill('');
 
-function checkWinner(){
-  const w=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-  for(let a of w){
-    if(board[a[0]] && board[a[0]]===board[a[1]] && board[a[1]]===board[a[2]]){
-      a.forEach(i => document.getElementById("c"+i).classList.add("win"));
-      setTimeout(()=>alert("Победа "+board[a[0]]), 100);
-      setTimeout(()=>location.reload(), 1500);
+cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        const index = cell.dataset.index;
+        if (board[index] === '') {
+            board[index] = turn;
+            cell.textContent = turn;
+            cell.style.color = turn === 'X' ? '#ff4444' : '#44ff44';
+            turn = turn === 'X' ? 'O' : 'X';
+            checkWin();
+        }
+    });
+});
+
+function checkWin() {
+    const winPatterns = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+    ];
+
+    for (let pattern of winPatterns) {
+        const [a,b,c] = pattern;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            highlightWin(pattern);
+            setTimeout(resetBoard, 1000);
+            break;
+        }
     }
-  }
-  if(!board.includes("")){
-    setTimeout(()=>alert("Ничья"), 100);
-    setTimeout(()=>location.reload(), 1500);
-  }
 }
 
-function move(i){
-  if(board[i] !== "") return;
-  board[i] = current;
-  document.getElementById("c"+i).innerText = current;
-  checkWinner();
-  current = current === "X" ? "O" : "X";
+function highlightWin(pattern) {
+    pattern.forEach(i => cells[i].style.backgroundColor = '#ff0');
 }
 
-function render(){
-  const b = document.getElementById("board");
-  for(let i=0;i<9;i++){
-    let d = document.createElement("div");
-    d.className="cell";
-    d.id="c"+i;
-    d.onclick = ()=>move(i);
-    b.appendChild(d);
-  }
+function resetBoard() {
+    board.fill('');
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.style.backgroundColor = '#222';
+    });
 }
-
-render();

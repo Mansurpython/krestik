@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe MiniApp</title>
+    <title>MbKrestik</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>🖤 TicTacToe</h2>
-<div class="board" id="board"></div>
-<div class="menu">
-    <button onclick="alert('Профиль')">Профиль</button>
-    <button onclick="alert('Магазин')">Магазин</button>
-    <button onclick="alert('Пригласить')">Пригласить</button>
-</div>
-<script src="script.js"></script>
+    <!-- Верхняя панель с очками, уровнем и звёздами -->
+    <div class="top-bar">
+        <div class="level">Уровень: <span id="level">1</span></div>
+        <div class="score">Очки: <span id="score">0</span></div>
+        <div class="stars">⭐ <span id="stars">0</span></div>
+    </div>
+
+    <!-- Игровое поле -->
+    <div class="game-container">
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+    </div>
+
+    <!-- Нижние кнопки -->
+    <div class="bottom-bar">
+        <button id="profile">Профиль</button>
+        <button id="shop">Магазин</button>
+        <button id="invite">Пригласить друга</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
