@@ -2,10 +2,15 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 import random
-from db import get_user, increment_win, increment_bot_score
+from db import get_user, increment_win, increment_bot_score, init_db
 
 app = FastAPI()
 app.mount("/webapp", StaticFiles(directory="webapp"), name="webapp")
+
+# Инициализация БД при старте
+@app.on_event("startup")
+async def startup_event():
+    await init_db()
 
 games = {}
 
