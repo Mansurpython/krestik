@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Верхняя панель с очками, уровнем и звёздами -->
+    <!-- Верхняя панель -->
     <div class="top-bar">
         <div class="level">Уровень: <span id="level">1</span></div>
         <div class="score">Очки: <span id="score">0</span></div>
@@ -29,27 +29,23 @@
         </div>
     </div>
 
-    <!-- Нижние кнопки -->
+    <!-- Нижняя панель -->
     <div class="bottom-bar">
         <button id="profile">Профиль</button>
         <button id="shop">Магазин</button>
         <button id="invite">Пригласить друга</button>
     </div>
 
-    <!-- Модальное окно для приглашений -->
-<div id="invite-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Пригласить друга</h2>
-        <ul id="friends-list">
-            <!-- Список друзей -->
-            <li>Друг 1 <button class="invite-btn" data-user="friend1">Пригласить</button></li>
-            <li>Друг 2 <button class="invite-btn" data-user="friend2">Пригласить</button></li>
-            <li>Друг 3 <button class="invite-btn" data-user="friend3">Пригласить</button></li>
-        </ul>
+    <!-- Модальное окно приглашения -->
+    <div id="invite-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Пригласить друга</h2>
+            <p>Отправьте ссылку другу, чтобы играть вместе:</p>
+            <input type="text" id="invite-link" readonly>
+            <button id="copy-link">Скопировать ссылку</button>
+        </div>
     </div>
-</div>
-
 
     <script src="script.js"></script>
 </body>

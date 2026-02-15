@@ -1,3 +1,4 @@
+/* Общие настройки */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -8,38 +9,6 @@ body {
     height: 100vh;
     justify-content: space-between;
 }
-
-/* Модальное окно */
-.modal {
-    display: none; /* по умолчанию скрыто */
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background-color: #222;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 80%;
-    color: #fff;
-    text-align: center;
-}
-
-.close {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: -10px;
-}
-
 
 .top-bar {
     display: flex;
@@ -66,7 +35,7 @@ body {
 
 .cell {
     background-color: #222;
-    border-radius: 8px; /* закругленные клетки */
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +71,66 @@ body {
 
 .bottom-bar button:hover {
     transform: scale(1.05);
+    background-color: #555;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #222;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 25%;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#invite-link {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+#copy-link {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
+#copy-link:hover {
     background-color: #555;
 }
 
