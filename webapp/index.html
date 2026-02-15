@@ -9,6 +9,8 @@
 <body>
     <!-- Верхняя панель -->
     <div class="top-bar">
+        <div class="role">Вы: -</div>
+        <div class="turn">Ход: -</div>
         <div class="level">Уровень: <span id="level">1</span></div>
         <div class="score">Очки: <span id="score">0</span></div>
         <div class="stars">⭐ <span id="stars">0</span></div>
@@ -34,6 +36,7 @@
         <button id="profile">Профиль</button>
         <button id="shop">Магазин</button>
         <button id="invite">Пригласить друга</button>
+        <button id="play-bot">Играть с ботом</button>
     </div>
 
     <!-- Модальное окно приглашения -->
@@ -44,6 +47,14 @@
             <p>Отправьте ссылку другу, чтобы играть вместе:</p>
             <input type="text" id="invite-link" readonly>
             <button id="copy-link">Скопировать ссылку</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно подтверждения готовности -->
+    <div id="ready-modal" class="modal">
+        <div class="modal-content">
+            <h2>Подтвердите готовность</h2>
+            <button id="ready-btn">Я готов</button>
         </div>
     </div>
 

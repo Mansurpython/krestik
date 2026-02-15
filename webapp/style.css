@@ -74,7 +74,7 @@ body {
     background-color: #555;
 }
 
-/* Модальное окно */
+/* Модальные окна */
 .modal {
     display: none;
     position: fixed;
@@ -121,7 +121,7 @@ body {
     color: #fff;
 }
 
-#copy-link {
+#copy-link, #ready-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
@@ -130,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-#copy-link:hover {
+#copy-link:hover, #ready-btn:hover {
     background-color: #555;
 }
 
