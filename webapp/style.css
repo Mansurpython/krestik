@@ -1,0 +1,9 @@
+body { background:black; color:white; text-align:center; font-family:Arial; }
+.board { display:grid; grid-template-columns:repeat(3,100px); gap:10px; justify-content:center; margin-top:30px; }
+.cell { width:100px; height:100px; background:#111; font-size:40px; display:flex; justify-content:center; align-items:center; cursor:pointer; transition: transform 0.2s, background 0.3s; }
+.cell:hover { transform: scale(1.1); background: #222; }
+.cell.win { background: gold; animation: glow 1s infinite alternate; }
+@keyframes glow { from { box-shadow: 0 0 10px gold; } to { box-shadow: 0 0 30px gold; } }
+.menu { margin-top:40px; }
+button { background:#111; color:white; border:1px solid #333; padding:10px; margin:5px; cursor:pointer; }
+button:hover { background:#222; }
