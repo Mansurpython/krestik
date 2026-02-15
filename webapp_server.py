@@ -7,12 +7,11 @@ from db import get_user, increment_win, increment_bot_score, init_db
 app = FastAPI()
 app.mount("/webapp", StaticFiles(directory="webapp"), name="webapp")
 
-# Инициализация БД при старте
+games = {}
+
 @app.on_event("startup")
 async def startup_event():
     await init_db()
-
-games = {}
 
 @app.get("/")
 async def index():
